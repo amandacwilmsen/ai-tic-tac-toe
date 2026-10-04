@@ -1,0 +1,93 @@
+id_tabuleiro,quantidade_x,quantidade_o,ocupada_superior_esquerda,ocupada_superior_centro,ocupada_superior_direita,ocupada_meio_esquerda,ocupada_meio_centro,ocupada_meio_direita,ocupada_inferior_esquerda,ocupada_inferior_centro,ocupada_inferior_direita,linhas_com_2_x,linhas_com_2_o,casas_vazias,jogador_da_vez,estado
+oxxobbobx,3,3,1,1,1,1,0,0,1,0,1,2,0,3,1,Jogador O venceu
+ooxxoxxob,4,4,1,1,1,1,1,1,1,1,0,4,2,1,1,Jogador O venceu
+bxxbxooox,4,3,0,1,1,0,1,1,1,1,1,5,1,2,-1,Tem jogo
+obxxoxoxo,4,4,1,0,1,1,1,1,1,1,1,2,3,1,1,Jogador O venceu
+obxoxxxbo,4,3,1,0,1,1,1,1,1,0,1,2,2,2,-1,Jogador X venceu
+xbbooobxx,3,3,1,0,0,1,1,1,0,1,1,2,0,3,1,Jogador O venceu
+bxoxxxboo,4,3,0,1,1,1,1,1,0,1,1,1,2,2,-1,Jogador X venceu
+ooxxobxox,4,4,1,1,1,1,1,0,1,1,1,4,2,1,1,Jogador O venceu
+xxbboobox,3,3,1,1,0,0,1,1,0,1,1,2,2,3,1,Tem jogo
+bxbbobxox,3,2,0,1,0,0,1,0,1,1,1,1,1,4,-1,Tem jogo
+bxbbbbbbb,1,0,0,1,0,0,0,0,0,0,0,0,0,8,-1,Tem jogo
+bxbbbobbx,2,1,0,1,0,0,0,1,0,0,1,0,0,6,-1,Tem jogo
+xobxooxxb,4,3,1,1,0,1,1,1,1,1,0,1,2,2,-1,Jogador X venceu
+bxoboxbox,3,3,0,1,1,0,1,1,0,1,1,1,2,3,1,Tem jogo
+bxoxobbxo,3,3,0,1,1,1,1,0,0,1,1,1,3,3,1,Tem jogo
+xxoboxoxo,4,4,1,1,1,0,1,1,1,1,1,2,3,1,1,Jogador O venceu
+oobxoxxxo,4,4,1,1,0,1,1,1,1,1,1,3,2,1,1,Jogador O venceu
+xxxxboobo,4,3,1,1,1,1,0,1,1,0,1,1,2,2,-1,Jogador X venceu
+xxooxoxox,5,4,1,1,1,1,1,1,1,1,1,5,2,0,-1,Jogador X venceu
+oxxxobxoo,4,4,1,1,1,1,1,0,1,1,1,3,2,1,1,Jogador O venceu
+obbxxxxoo,4,3,1,0,0,1,1,1,1,1,1,2,2,2,-1,Jogador X venceu
+ooooxxbxx,4,4,1,1,1,1,1,1,0,1,1,5,1,1,1,Jogador O venceu
+bxoboboxx,3,3,0,1,1,0,1,0,1,1,1,2,0,3,1,Jogador O venceu
+obxoxxobb,3,3,1,0,1,1,1,1,1,0,0,3,0,3,1,Jogador O venceu
+xobxboxbb,3,2,1,1,0,1,0,1,1,0,0,0,0,4,-1,Jogador X venceu
+bbboxbbxo,2,2,0,0,0,1,1,0,0,1,1,1,0,5,1,Tem jogo
+ooxbboxxx,4,3,1,1,1,0,0,1,1,1,1,2,1,2,-1,Jogador X venceu
+oxoboxxxo,4,4,1,1,1,0,1,1,1,1,1,2,3,1,1,Jogador O venceu
+bobobbxxx,3,2,0,1,0,1,0,0,1,1,1,0,0,4,-1,Jogador X venceu
+xbboxbbox,3,2,1,0,0,1,1,0,0,1,1,0,0,4,-1,Jogador X venceu
+xxxboxboo,4,3,1,1,1,0,1,1,0,1,1,1,3,2,-1,Jogador X venceu
+oxboobxxx,4,3,1,1,0,1,1,0,1,1,1,1,3,2,-1,Jogador X venceu
+obxobobxx,3,3,1,0,1,1,0,1,0,1,1,2,2,3,1,Tem jogo
+xxbooooxx,4,4,1,1,0,1,1,1,1,1,1,4,2,1,1,Jogador O venceu
+boboxxbox,3,3,0,1,0,1,1,1,0,1,1,3,1,3,1,Tem jogo
+bobxoxbox,3,3,0,1,0,1,1,1,0,1,1,2,0,3,1,Jogador O venceu
+xoooxbxbx,4,3,1,1,1,1,1,0,1,0,1,3,1,2,-1,Jogador X venceu
+bbxobbxxo,3,2,0,0,1,1,0,0,1,1,1,2,0,4,-1,Tem jogo
+xxbooxbbo,3,3,1,1,0,1,1,1,0,0,1,1,2,3,1,Tem jogo
+ooboxbxxx,4,3,1,1,0,1,1,0,1,1,1,3,2,2,-1,Jogador X venceu
+xxobbobxo,3,3,1,1,1,0,0,1,0,1,1,2,0,3,1,Jogador O venceu
+xooxboxxb,4,3,1,1,1,1,0,1,1,1,0,1,2,2,-1,Jogador X venceu
+xbxbbxooo,3,3,1,0,1,0,0,1,1,1,1,2,0,3,1,Jogador O venceu
+obxobxxox,4,3,1,0,1,1,0,1,1,1,1,2,1,2,-1,Jogador X venceu
+xooobbxxx,4,3,1,1,1,1,0,0,1,1,1,2,1,2,-1,Jogador X venceu
+bboxboxxo,3,3,0,0,1,1,0,1,1,1,1,2,0,3,1,Jogador O venceu
+xoxbbxbob,3,2,1,1,1,0,0,1,0,1,0,2,1,4,-1,Tem jogo
+xboxoxxbo,4,3,1,0,1,1,1,1,1,0,1,1,3,2,-1,Jogador X venceu
+xoxoobxox,4,4,1,1,1,1,1,0,1,1,1,6,1,1,1,Jogador O venceu
+bxxoooxxo,4,4,0,1,1,1,1,1,1,1,1,4,2,1,1,Jogador O venceu
+boxxobxob,3,3,0,1,1,1,1,0,1,1,0,2,0,3,1,Jogador O venceu
+obbbbbxbx,2,1,1,0,0,0,0,0,1,0,1,1,0,6,-1,Tem jogo
+xxboxxooo,4,4,1,1,0,1,1,1,1,1,1,4,1,1,1,Jogador O venceu
+xobobxxox,4,3,1,1,0,1,0,1,1,1,1,4,1,2,-1,Tem jogo
+obxoxooxx,4,4,1,0,1,1,1,1,1,1,1,5,1,1,1,Jogador O venceu
+oobbbxbxx,3,2,1,1,0,0,0,1,0,1,1,2,1,4,-1,Tem jogo
+boxoxbxox,4,3,0,1,1,1,1,0,1,1,1,3,1,2,-1,Jogador X venceu
+xoxxbooox,4,4,1,1,1,1,0,1,1,1,1,4,2,1,1,Tem jogo
+ooobbxbxx,3,3,1,1,1,0,0,1,0,1,1,2,0,3,1,Jogador O venceu
+xoxxoooxx,5,4,1,1,1,1,1,1,1,1,1,5,3,0,-1,Empate
+xxboxboox,4,3,1,1,0,1,1,0,1,1,1,2,2,2,-1,Jogador X venceu
+xboobxxbo,3,3,1,0,1,1,0,1,1,0,1,1,1,3,1,Tem jogo
+xooboxxxb,4,3,1,1,1,0,1,1,1,1,0,2,3,2,-1,Tem jogo
+obboxxoxb,3,3,1,0,0,1,1,1,1,1,0,2,0,3,1,Jogador O venceu
+xoxxobxbo,4,3,1,1,1,1,1,0,1,0,1,2,2,2,-1,Jogador X venceu
+xxoobxxbo,4,3,1,1,1,1,0,1,1,0,1,2,1,2,-1,Tem jogo
+obxxbxbbo,3,2,1,0,1,1,0,1,0,0,1,2,1,4,-1,Tem jogo
+obxxxobxo,4,3,1,0,1,1,1,1,0,1,1,3,2,2,-1,Tem jogo
+xbbxooxox,4,3,1,0,0,1,1,1,1,1,1,2,2,2,-1,Jogador X venceu
+xxoobxobx,4,3,1,1,1,1,0,1,1,0,1,3,2,2,-1,Tem jogo
+oxxxooxox,5,4,1,1,1,1,1,1,1,1,1,5,3,0,-1,Empate
+xxxooxobb,4,3,1,1,1,1,1,1,1,0,0,1,3,2,-1,Jogador X venceu
+oxxobboxb,3,3,1,1,1,1,0,0,1,1,0,2,0,3,1,Jogador O venceu
+xoxboooxx,4,4,1,1,1,0,1,1,1,1,1,4,3,1,1,Tem jogo
+xxoxoxxoo,5,4,1,1,1,1,1,1,1,1,1,2,5,0,-1,Jogador X venceu
+bxxxbooox,4,3,0,1,1,1,0,1,1,1,1,2,1,2,-1,Tem jogo
+oboxobxxx,4,3,1,0,1,1,1,0,1,1,1,1,3,2,-1,Jogador X venceu
+xobbobxox,3,3,1,1,0,0,1,0,1,1,1,3,0,3,1,Jogador O venceu
+oxxbxobxo,4,3,1,1,1,0,1,1,0,1,1,2,2,2,-1,Jogador X venceu
+xbobbboxb,2,2,1,0,1,0,0,0,1,1,0,0,1,5,1,Tem jogo
+xxoxobobb,3,3,1,1,1,1,1,0,1,0,0,2,0,3,1,Jogador O venceu
+xbbxobxob,3,2,1,0,0,1,1,0,1,1,0,0,1,4,-1,Jogador X venceu
+xoboxbbbx,3,2,1,1,0,1,1,0,0,0,1,0,0,4,-1,Jogador X venceu
+xxxooxoox,5,4,1,1,1,1,1,1,1,1,1,1,5,0,-1,Jogador X venceu
+bbxbboxob,2,2,0,0,1,0,0,1,1,1,0,1,0,5,1,Tem jogo
+ooooxxxxb,4,4,1,1,1,1,1,1,1,1,0,4,1,1,1,Jogador O venceu
+xoobxoxxo,4,4,1,1,1,0,1,1,1,1,1,5,1,1,1,Jogador O venceu
+xbboobxbx,3,2,1,0,0,1,1,0,1,0,1,3,1,4,-1,Tem jogo
+xbxbxobbo,3,2,1,0,1,0,1,1,0,0,1,3,1,4,-1,Tem jogo
+oxoobxoxx,4,4,1,1,1,1,0,1,1,1,1,3,2,1,1,Jogador O venceu
+ooxbxxobb,3,3,1,1,1,0,1,1,1,0,0,3,2,3,1,Tem jogo
+oobxxxobx,4,3,1,1,0,1,1,1,1,0,1,2,2,2,-1,Jogador X venceu

@@ -1,0 +1,127 @@
+{
+  "fonte": {
+    "autor": "David W. Aha",
+    "titulo": "Tic-Tac-Toe Endgame",
+    "ano": 1991,
+    "url": "https://archive.ics.uci.edu/dataset/101/tic+tac+toe+endgame",
+    "doi": "https://doi.org/10.24432/C5688J",
+    "licenca": "CC BY 4.0"
+  },
+  "versoes": {
+    "python": "3.13.13",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0"
+  },
+  "semente": 42,
+  "maximo_por_classe": 200,
+  "classes": [
+    "Tem jogo",
+    "Jogador X venceu",
+    "Jogador O venceu",
+    "Empate"
+  ],
+  "original": {
+    "Tem jogo": 0,
+    "Jogador X venceu": 626,
+    "Jogador O venceu": 316,
+    "Empate": 16
+  },
+  "candidatos": {
+    "Tem jogo": 4520,
+    "Jogador X venceu": 626,
+    "Jogador O venceu": 316,
+    "Empate": 16
+  },
+  "selecionados": {
+    "Tem jogo": 200,
+    "Jogador X venceu": 200,
+    "Jogador O venceu": 200,
+    "Empate": 16
+  },
+  "divisao": {
+    "treino": {
+      "linhas": 431,
+      "por_classe": {
+        "Tem jogo": 140,
+        "Jogador X venceu": 140,
+        "Jogador O venceu": 140,
+        "Empate": 11
+      }
+    },
+    "validacao": {
+      "linhas": 92,
+      "por_classe": {
+        "Tem jogo": 30,
+        "Jogador X venceu": 30,
+        "Jogador O venceu": 30,
+        "Empate": 2
+      }
+    },
+    "teste": {
+      "linhas": 93,
+      "por_classe": {
+        "Tem jogo": 30,
+        "Jogador X venceu": 30,
+        "Jogador O venceu": 30,
+        "Empate": 3
+      }
+    }
+  },
+  "treino_balanceado": {
+    "metodo": "reamostragem com reposicao somente no treino, preservando todos os exemplos distintos",
+    "linhas": 560,
+    "tabuleiros_distintos": 431,
+    "por_classe": {
+      "Tem jogo": 140,
+      "Jogador X venceu": 140,
+      "Jogador O venceu": 140,
+      "Empate": 140
+    }
+  },
+  "codificacao_casas": {
+    "b": 0,
+    "x": 1,
+    "o": -1
+  },
+  "caracteristicas": {
+    "abordagem_1": [
+      "superior_esquerda",
+      "superior_centro",
+      "superior_direita",
+      "meio_esquerda",
+      "meio_centro",
+      "meio_direita",
+      "inferior_esquerda",
+      "inferior_centro",
+      "inferior_direita"
+    ],
+    "abordagem_2": [
+      "quantidade_x",
+      "quantidade_o",
+      "ocupada_superior_esquerda",
+      "ocupada_superior_centro",
+      "ocupada_superior_direita",
+      "ocupada_meio_esquerda",
+      "ocupada_meio_centro",
+      "ocupada_meio_direita",
+      "ocupada_inferior_esquerda",
+      "ocupada_inferior_centro",
+      "ocupada_inferior_direita",
+      "linhas_com_2_x",
+      "linhas_com_2_o",
+      "casas_vazias",
+      "jogador_da_vez"
+    ]
+  },
+  "convencoes": {
+    "posicoes_ocupadas": "nove indicadores por casa: 0 vazia e 1 ocupada",
+    "linhas_com_2": "exatamente duas marcas em cada um dos oito alinhamentos; terceira casa pode ser b ou adversario",
+    "jogador_da_vez": "1 para X se nX == nO, senao -1 para O; em estados finais e o turno hipotetico seguinte"
+  },
+  "limitacoes": [
+    "Somente 16 empates distintos; a reamostragem do treino nao cria novos estados.",
+    "Validacao e teste possuem poucos empates; apresentar metricas por classe e medias macro.",
+    "Rotacoes e reflexoes equivalentes podem aparecer em conjuntos diferentes.",
+    "As caracteristicas da abordagem 2 perdem parte da informacao do tabuleiro."
+  ]
+}

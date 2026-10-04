@@ -1,0 +1,94 @@
+id_tabuleiro,superior_esquerda,superior_centro,superior_direita,meio_esquerda,meio_centro,meio_direita,inferior_esquerda,inferior_centro,inferior_direita,estado,origem,n_jogadas
+xooxxbxbo,x,o,o,x,x,b,x,b,o,Jogador X venceu,UCI,7
+oxobobxxx,o,x,o,b,o,b,x,x,x,Jogador X venceu,UCI,7
+ooxxxxoox,o,o,x,x,x,x,o,o,x,Jogador X venceu,UCI,9
+oooxbxxbb,o,o,o,x,b,x,x,b,b,Jogador O venceu,UCI,6
+xboxoxoxo,x,b,o,x,o,x,o,x,o,Jogador O venceu,UCI,8
+oooxxbbbx,o,o,o,x,x,b,b,b,x,Jogador O venceu,UCI,6
+oooxbbxbx,o,o,o,x,b,b,x,b,x,Jogador O venceu,UCI,6
+oxxxbobox,o,x,x,x,b,o,b,o,x,Tem jogo,gerado,7
+xoxooobxx,x,o,x,o,o,o,b,x,x,Jogador O venceu,UCI,8
+ooxxxooxx,o,o,x,x,x,o,o,x,x,Empate,UCI,9
+xxoxobxbo,x,x,o,x,o,b,x,b,o,Jogador X venceu,UCI,7
+xobxobxbb,x,o,b,x,o,b,x,b,b,Jogador X venceu,UCI,5
+bbobxbbxo,b,b,o,b,x,b,b,x,o,Tem jogo,gerado,4
+obboxxxob,o,b,b,o,x,x,x,o,b,Tem jogo,gerado,6
+xobxxboxo,x,o,b,x,x,b,o,x,o,Tem jogo,gerado,7
+bxoxoboxb,b,x,o,x,o,b,o,x,b,Jogador O venceu,UCI,6
+oxxbobbxo,o,x,x,b,o,b,b,x,o,Jogador O venceu,UCI,6
+xxoxboxob,x,x,o,x,b,o,x,o,b,Jogador X venceu,UCI,7
+oxobobxbx,o,x,o,b,o,b,x,b,x,Tem jogo,gerado,6
+xxoooxxox,x,x,o,o,o,x,x,o,x,Empate,UCI,9
+oxbxobbxb,o,x,b,x,o,b,b,x,b,Tem jogo,gerado,5
+oxoxboxxo,o,x,o,x,b,o,x,x,o,Jogador O venceu,UCI,8
+xboxoxobb,x,b,o,x,o,x,o,b,b,Jogador O venceu,UCI,6
+bxoxbxobo,b,x,o,x,b,x,o,b,o,Tem jogo,gerado,6
+xbxboxobb,x,b,x,b,o,x,o,b,b,Tem jogo,gerado,5
+xbobxbobx,x,b,o,b,x,b,o,b,x,Jogador X venceu,UCI,5
+xbxxbobbo,x,b,x,x,b,o,b,b,o,Tem jogo,gerado,5
+boxooxbxx,b,o,x,o,o,x,b,x,x,Jogador X venceu,UCI,7
+bbbxxxobo,b,b,b,x,x,x,o,b,o,Jogador X venceu,UCI,5
+xbxxxoooo,x,b,x,x,x,o,o,o,o,Jogador O venceu,UCI,8
+xxxbbbobo,x,x,x,b,b,b,o,b,o,Jogador X venceu,UCI,5
+boxobxxxo,b,o,x,o,b,x,x,x,o,Tem jogo,gerado,7
+oooxoxbxx,o,o,o,x,o,x,b,x,x,Jogador O venceu,UCI,8
+oxooxbbxx,o,x,o,o,x,b,b,x,x,Jogador X venceu,UCI,7
+bboxxxobb,b,b,o,x,x,x,o,b,b,Jogador X venceu,UCI,5
+xoboobxxx,x,o,b,o,o,b,x,x,x,Jogador X venceu,UCI,7
+bxobobbxb,b,x,o,b,o,b,b,x,b,Tem jogo,gerado,4
+obxxoxbbo,o,b,x,x,o,x,b,b,o,Jogador O venceu,UCI,6
+obxxxbbbo,o,b,x,x,x,b,b,b,o,Tem jogo,gerado,5
+xbxoooxxo,x,b,x,o,o,o,x,x,o,Jogador O venceu,UCI,8
+boxoxxobx,b,o,x,o,x,x,o,b,x,Jogador X venceu,UCI,7
+oxxxoboxo,o,x,x,x,o,b,o,x,o,Jogador O venceu,UCI,8
+xxbbobobx,x,x,b,b,o,b,o,b,x,Tem jogo,gerado,5
+ooxxxxbbo,o,o,x,x,x,x,b,b,o,Jogador X venceu,UCI,7
+obxbxbobx,o,b,x,b,x,b,o,b,x,Tem jogo,gerado,5
+xoxbxbxoo,x,o,x,b,x,b,x,o,o,Jogador X venceu,UCI,7
+xbboxbobx,x,b,b,o,x,b,o,b,x,Jogador X venceu,UCI,5
+xboxoxoox,x,b,o,x,o,x,o,o,x,Jogador O venceu,UCI,8
+xxoobxbbb,x,x,o,o,b,x,b,b,b,Tem jogo,gerado,5
+bbxboxbox,b,b,x,b,o,x,b,o,x,Jogador X venceu,UCI,5
+oxoobbxxx,o,x,o,o,b,b,x,x,x,Jogador X venceu,UCI,7
+boxxxbboo,b,o,x,x,x,b,b,o,o,Tem jogo,gerado,6
+xooxoxbox,x,o,o,x,o,x,b,o,x,Jogador O venceu,UCI,8
+xxxobobox,x,x,x,o,b,o,b,o,x,Jogador X venceu,UCI,7
+xoxooxoxx,x,o,x,o,o,x,o,x,x,Jogador X venceu,UCI,9
+oboxboxxx,o,b,o,x,b,o,x,x,x,Jogador X venceu,UCI,7
+obxxooxxo,o,b,x,x,o,o,x,x,o,Jogador O venceu,UCI,8
+xbooxobxx,x,b,o,o,x,o,b,x,x,Jogador X venceu,UCI,7
+obxxobbxo,o,b,x,x,o,b,b,x,o,Jogador O venceu,UCI,6
+xxbbooxbo,x,x,b,b,o,o,x,b,o,Tem jogo,gerado,6
+xobboxxxo,x,o,b,b,o,x,x,x,o,Tem jogo,gerado,7
+ooxboxxxo,o,o,x,b,o,x,x,x,o,Jogador O venceu,UCI,8
+bbobxxoxb,b,b,o,b,x,x,o,x,b,Tem jogo,gerado,5
+xboooxoxx,x,b,o,o,o,x,o,x,x,Jogador O venceu,UCI,8
+oxxbobxbo,o,x,x,b,o,b,x,b,o,Jogador O venceu,UCI,6
+bxbbxoobb,b,x,b,b,x,o,o,b,b,Tem jogo,gerado,4
+xbbooxbox,x,b,b,o,o,x,b,o,x,Tem jogo,gerado,6
+xobxoxbob,x,o,b,x,o,x,b,o,b,Jogador O venceu,UCI,6
+ooxxoxxbo,o,o,x,x,o,x,x,b,o,Jogador O venceu,UCI,8
+xboxoxbxo,x,b,o,x,o,x,b,x,o,Tem jogo,gerado,7
+bbboxbbox,b,b,b,o,x,b,b,o,x,Tem jogo,gerado,4
+oxxoboxox,o,x,x,o,b,o,x,o,x,Tem jogo,gerado,8
+xxxboobxo,x,x,x,b,o,o,b,x,o,Jogador X venceu,UCI,7
+xbbxobxbo,x,b,b,x,o,b,x,b,o,Jogador X venceu,UCI,5
+boxoxxxbo,b,o,x,o,x,x,x,b,o,Jogador X venceu,UCI,7
+bbbbbxobx,b,b,b,b,b,x,o,b,x,Tem jogo,gerado,3
+obbxboxxb,o,b,b,x,b,o,x,x,b,Tem jogo,gerado,5
+xbxoooxox,x,b,x,o,o,o,x,o,x,Jogador O venceu,UCI,8
+oxxobxoxo,o,x,x,o,b,x,o,x,o,Jogador O venceu,UCI,8
+boxxxxboo,b,o,x,x,x,x,b,o,o,Jogador X venceu,UCI,7
+xoxobxbox,x,o,x,o,b,x,b,o,x,Jogador X venceu,UCI,7
+boxxboxbo,b,o,x,x,b,o,x,b,o,Tem jogo,gerado,6
+boxxbxbob,b,o,x,x,b,x,b,o,b,Tem jogo,gerado,5
+xbobboxbx,x,b,o,b,b,o,x,b,x,Tem jogo,gerado,5
+oooxoxxxb,o,o,o,x,o,x,x,x,b,Jogador O venceu,UCI,8
+bbxxxoxoo,b,b,x,x,x,o,x,o,o,Jogador X venceu,UCI,7
+ooxoxboxx,o,o,x,o,x,b,o,x,x,Jogador O venceu,UCI,8
+oboxxoxxo,o,b,o,x,x,o,x,x,o,Jogador O venceu,UCI,8
+xoxoxxoxo,x,o,x,o,x,x,o,x,o,Empate,UCI,9
+bxbbobbbx,b,x,b,b,o,b,b,b,x,Tem jogo,gerado,3
+xbxobxoox,x,b,x,o,b,x,o,o,x,Jogador X venceu,UCI,7
+boxxoxbob,b,o,x,x,o,x,b,o,b,Jogador O venceu,UCI,6
+oxxooxoxb,o,x,x,o,o,x,o,x,b,Jogador O venceu,UCI,8
