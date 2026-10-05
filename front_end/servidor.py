@@ -117,7 +117,7 @@ def criar_servidor(classificadores, pasta_registros, porta=8765):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Jogo da velha com avaliação de MLP e SVM.")
+    parser = argparse.ArgumentParser(description="Jogo da velha com avaliação dos cinco classificadores.")
     parser.add_argument("--porta", type=int, default=8765)
     parser.add_argument("--registros", type=Path, default=PASTA_FRONT / "resultados")
     args = parser.parse_args()

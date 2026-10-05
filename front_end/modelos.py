@@ -11,17 +11,29 @@ import sklearn
 from front_end.jogo import CLASSES, extrair_entradas
 
 
+MODELOS = {
+    "mlp": ("MLP · rede neural", "mlp", "mlp.ipynb"),
+    "svm": ("SVM · vetores de suporte", "svm", "svm.ipynb"),
+    "knn": ("k-NN · vizinhos mais próximos", "knn", "knn.ipynb"),
+    "arvore": ("Árvore de decisão", "arvoreDecisao", "arvore_decisao.ipynb"),
+    "random_forest": ("Random Forest · floresta aleatória", "randomForest", "random_forest.ipynb"),
+}
+
+
 class Classificadores:
     def __init__(self, raiz):
         self.pipelines = {}
         self.informacoes = {}
-        for chave, nome in [("mlp", "MLP · rede neural"), ("svm", "SVM · vetores de suporte")]:
-            pasta = Path(raiz) / f"dataset/processado/{chave}/resultados"
+        for chave, (nome, diretorio, notebook) in MODELOS.items():
+            pasta = Path(raiz) / "dataset/processado" / diretorio / "resultados"
             arquivo = pasta / f"modelo_{chave}.joblib"
+            caminho_notebook = f"dataset/processado/{diretorio}/{notebook}"
+            if not arquivo.is_file() or not (pasta / "resumo_experimento.json").is_file():
+                raise ValueError(f"Execute a última etapa de {caminho_notebook} para exportar seu modelo.")
             try:
                 resumo = json.loads((pasta / "resumo_experimento.json").read_text(encoding="utf-8"))
-            except FileNotFoundError as erro:
-                raise ValueError(f"Execute a última etapa do notebook {chave} para exportar seu modelo.") from erro
+            except json.JSONDecodeError as erro:
+                raise ValueError(f"O resumo do modelo {chave} não é um JSON válido.") from erro
             versao = resumo["versoes"]["scikit_learn"]
             if sklearn.__version__ != versao:
                 raise ValueError(
@@ -49,6 +61,6 @@ class Classificadores:
         """Classifica o tabuleiro usando o pré-processamento e o modelo já ajustados."""
         info = self.informacoes[modelo]
         entradas = extrair_entradas(tabuleiro, info["abordagem"])
-        # A previsão reutiliza o StandardScaler do treino; nenhum parâmetro é reajustado.
+        # Reutiliza o modelo e, quando presente, o padronizador ajustado no treino.
         X = pd.DataFrame([entradas], columns=info["features"])
         return str(self.pipelines[modelo].predict(X)[0])

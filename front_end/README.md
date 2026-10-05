@@ -6,7 +6,7 @@ escolhendo uma casa livre aleatoriamente, sem consultar os classificadores.
 
 ## Executar
 
-Na raiz do projeto, use o mesmo ambiente Python utilizado nos notebooks de MLP e SVM:
+Na raiz do projeto, use o mesmo ambiente Python utilizado para exportar os modelos:
 
 ```sh
 python front_end/servidor.py
@@ -24,15 +24,24 @@ ambiente para treinar, exporte novamente os modelos e mantenha a mesma versão n
 
 ## Modelo utilizado
 
-A MLP é o padrão. O seletor permite usar o SVM antes da primeira jogada ou após o fim
-da partida. Cada modelo utiliza a abordagem escolhida pela validação de seu notebook
-e o `Pipeline` salvo, que inclui o padronizador ajustado somente no treino.
+A MLP é o padrão. O seletor permite escolher **MLP, SVM, k-NN, árvore de decisão ou
+Random Forest** antes da primeira jogada ou após o fim da partida. Para mudar durante
+uma partida, clique em **Nova partida** e escolha o modelo antes de jogar.
+Cada modelo utiliza a abordagem escolhida pela validação de seu notebook e o modelo
+salvo, incluindo o padronizador ajustado somente no treino quando ele é utilizado.
 O front end não treina nem ajusta parâmetros.
+
+Os cinco modelos e seus resumos estão nas pastas `resultados/` dos respectivos
+experimentos. Os notebooks de k-NN, árvore de decisão e Random Forest incluem uma
+etapa final de exportação. Ela preserva as configurações selecionadas e registra as
+colunas de entrada, a versão do scikit-learn e as previsões de teste para auditoria.
+As métricas da interação ficam separadas por modelo, inclusive ao voltar a um modelo
+que já foi utilizado na mesma sessão.
 
 O seletor é um recurso adicional de avaliação; o enunciado exige o uso do classificador
 escolhido, sem obrigar a seleção de modelos pelo usuário. A escolha definitiva deve ser
 documentada após a comparação dos cinco algoritmos e refletida na configuração da interface.
-Para acrescentar outro modelo, exporte seu `Pipeline` e metadados e registre-o em
+Para acrescentar outro modelo, exporte seu modelo e metadados e registre-o em
 `modelos.py`, preservando as mesmas representações de entrada.
 
 ## Como atendemos ao enunciado
@@ -90,24 +99,30 @@ resultados de interação com usuários.
 | Arquivo | Responsabilidade |
 | --- | --- |
 | `jogo.py` | Regras, características, partidas, contagens e gravação |
-| `modelos.py` | Leitura dos Pipelines e classificação, sem novo treino |
+| `modelos.py` | Leitura dos cinco modelos exportados e classificação, sem novo treino |
 | `servidor.py` | Serve a página e recebe as ações do navegador |
 | `index.html` / `estilo.css` | Estrutura e aparência da interface |
 | `app.js` | Cliques, apresentação do estado e turno automático da máquina |
 | `test_front_end.py` | Verifica os casos de erro exigidos e a contabilização |
 | `test_http.py` | Verifica página, API, sessões e exportação com os modelos reais |
+| `test_modelos.py` | Compara características e previsões do front com os experimentos exportados |
 
 Execute os testes de comportamento na raiz:
 
 ```sh
 python -m unittest front_end.test_front_end -v
+python -m unittest front_end.test_modelos -v
 python -m unittest front_end.test_http -v
 ```
 
 Os testes de `test_front_end.py` usam classificadores controlados para reproduzir os
 erros de classificação exigidos pelo enunciado. O teste de `test_http.py` utiliza os modelos
 reais exportados para verificar a integração entre página, servidor, sessões e registros.
-Ambos escrevem somente em pastas temporárias, preservando os resultados das partidas reais.
+O teste de `test_modelos.py` verifica os 93 tabuleiros de teste para cada um dos cinco
+modelos, comparando as entradas com os CSVs preparados e as previsões com os registros
+dos experimentos.
+Os testes de partidas escrevem somente em pastas temporárias, preservando os resultados
+das interações reais. O teste de modelos apenas lê os arquivos dos experimentos.
 Essas verificações avaliam o funcionamento do sistema; suas contagens não devem ser
 apresentadas como desempenho obtido durante interações com usuários.
 
