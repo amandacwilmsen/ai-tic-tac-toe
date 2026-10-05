@@ -1,0 +1,3 @@
+codigo_abordagem,abordagem,kernel,C,gamma,gamma_efetivo,n_vetores_suporte,n_features,f1_treino,val_acc,val_f1_macro,gap_treino_val
+abordagem_1,A1 (tabuleiro),rbf,100.0,0.01,0.01,317,9,0.9236001162030648,0.8369565217391305,0.7467740060451058,0.17682611015795902
+abordagem_2,A2 (características),linear,1.0,-,,144,15,0.9636500846790164,0.9347826086956522,0.94853270609319,0.015117378585826402

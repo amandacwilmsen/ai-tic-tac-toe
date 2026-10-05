@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171c26">
+  <title>Jogo da velha · Trabalho 1 de Inteligência Artificial</title>
+  <link rel="stylesheet" href="/estilo.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="cabecalho">
+      <a class="marca" href="/" aria-label="Jogo da velha, início">
+        <span class="simbolo-marca" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <path d="M9 4v16M15 4v16M4 9h16M4 15h16"/>
+            <path d="m4.5 4.5 2 2m0-2-2 2"/>
+            <circle cx="18.4" cy="18.4" r="1.5"/>
+          </svg>
+        </span>
+        <span>Trabalho 1 · Inteligência Artificial</span>
+      </a>
+      <span class="etiqueta">Humano × máquina</span>
+    </header>
+
+    <div class="introducao">
+      <h1>Jogo da velha</h1>
+      <p>Jogue contra a máquina e acompanhe a classificação de cada jogada.</p>
+    </div>
+
+    <div id="erro" class="erro" role="alert" hidden></div>
+    <div class="layout">
+      <section class="cartao partida" aria-labelledby="titulo-partida">
+        <div class="topo-cartao">
+          <div><p class="sobretitulo">Partida atual</p><h2 id="titulo-partida">Sua vez de jogar</h2></div>
+          <span id="contador-jogadas" class="contador">0 / 9</span>
+        </div>
+        <div class="jogadores">
+          <span id="jogador-x" class="jogador ativo"><b class="marca-x">X</b> Você</span>
+          <span class="versus">vs.</span>
+          <span id="jogador-o" class="jogador"><b class="marca-o">O</b> Máquina <small>aleatória</small></span>
+        </div>
+        <div id="tabuleiro" class="tabuleiro" aria-label="Tabuleiro do jogo da velha">
+          <button type="button" class="casa" data-posicao="0" aria-label="Casa 1, vazia" disabled><span class="numero">1</span></button>
+          <button type="button" class="casa" data-posicao="1" aria-label="Casa 2, vazia" disabled><span class="numero">2</span></button>
+          <button type="button" class="casa" data-posicao="2" aria-label="Casa 3, vazia" disabled><span class="numero">3</span></button>
+          <button type="button" class="casa" data-posicao="3" aria-label="Casa 4, vazia" disabled><span class="numero">4</span></button>
+          <button type="button" class="casa" data-posicao="4" aria-label="Casa 5, vazia" disabled><span class="numero">5</span></button>
+          <button type="button" class="casa" data-posicao="5" aria-label="Casa 6, vazia" disabled><span class="numero">6</span></button>
+          <button type="button" class="casa" data-posicao="6" aria-label="Casa 7, vazia" disabled><span class="numero">7</span></button>
+          <button type="button" class="casa" data-posicao="7" aria-label="Casa 8, vazia" disabled><span class="numero">8</span></button>
+          <button type="button" class="casa" data-posicao="8" aria-label="Casa 9, vazia" disabled><span class="numero">9</span></button>
+        </div>
+        <p class="dica">Escolha uma casa livre ou use as teclas de 1 a 9.</p>
+        <div id="feedback" class="feedback" role="status" aria-live="polite">
+          <span class="ponto" aria-hidden="true"></span><span id="mensagem">Carregando a partida…</span>
+        </div>
+        <button id="nova-partida" class="botao primario" type="button" disabled>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M20 12a8 8 0 1 1-2.4-5.7"/></svg>
+          Nova partida
+        </button>
+      </section>
+
+      <aside class="painel" aria-label="Avaliação da inteligência artificial">
+        <section class="cartao previsao">
+          <div class="topo-cartao"><h2>Classificação da IA</h2></div>
+          <div id="estado-ia" class="estado-ia aguardando" aria-live="polite">Carregando…</div>
+          <p class="conferencia">Conferência pelas regras: <strong id="estado-real">—</strong></p>
+          <div class="separador"></div>
+          <label for="modelo" class="rotulo">Modelo em uso</label>
+          <select id="modelo" disabled aria-describedby="dica-modelo"><option>Carregando…</option></select>
+          <p id="dica-modelo" class="texto-pequeno">Escolha antes da primeira jogada. Cada modelo tem sua própria contagem.</p>
+        </section>
+
+        <section class="cartao avaliacao" aria-labelledby="titulo-avaliacao">
+          <div class="topo-cartao"><h2 id="titulo-avaliacao">Desempenho da IA</h2><span class="texto-pequeno">Nesta sessão</span></div>
+          <div class="acuracia"><strong id="acuracia">—</strong><span>acurácia por jogada</span></div>
+          <div class="barra" aria-hidden="true"><span id="barra-acuracia"></span></div>
+          <div class="numeros">
+            <div><strong id="avaliacoes">0</strong><span>avaliações</span></div>
+            <div class="acerto"><strong id="acertos">0</strong><span>acertos</span></div>
+            <div class="falha"><strong id="erros">0</strong><span>erros</span></div>
+          </div>
+          <p class="texto-pequeno">Uma avaliação após cada jogada, incluindo as da máquina. O tabuleiro inicial não entra na contagem.</p>
+          <div class="placar"><span>Partidas concluídas <b id="partidas">0</b></span><span id="placar">X: 0 · O: 0 · Empates: 0</span></div>
+        </section>
+      </aside>
+    </div>
+
+    <section class="cartao historico" aria-labelledby="titulo-historico">
+      <div class="topo-cartao"><h2 id="titulo-historico">Histórico da partida</h2><span class="texto-pequeno">Uma previsão por jogada</span></div>
+      <p id="historico-vazio" class="vazio">Nenhuma jogada registrada. Escolha uma casa para começar.</p>
+      <div id="tabela-historico" class="tabela-container" hidden>
+        <table><thead><tr><th>Jogada</th><th>Previsão da IA</th><th>Estado real</th><th>Conferência</th></tr></thead><tbody id="historico"></tbody></table>
+      </div>
+      <div class="exportacao"><span class="texto-pequeno">Registre esta sessão para analisar no relatório.</span><div><a href="/api/exportar.csv">Baixar jogadas <small>CSV ↓</small></a><a href="/api/exportar.json">Baixar resumo <small>JSON ↓</small></a></div></div>
+    </section>
+
+    <details class="explicacao"><summary>Como funciona a avaliação?</summary>
+      <p>A máquina joga O e escolhe uma casa livre ao acaso. O modelo de IA recebe o tabuleiro após cada jogada e prevê uma das quatro classes. As regras do jogo fornecem o gabarito para contar acertos e erros.</p>
+      <p>Se a IA anunciar um fim incorreto, continuamos. Se ela não perceber um fim real, encerramos a partida e registramos o erro. A acurácia é o número de previsões corretas dividido pelo total de jogadas avaliadas.</p>
+    </details>
+    <footer>
+      <div>Trabalho 1 · Inteligência Artificial</div>
+      <div>Amanda Wilmsen e Kamilah Santos</div>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,237 @@
+{
+  "algoritmo": "SVC (SVM)",
+  "semente_preparacao_dados": 42,
+  "ajuste_deterministico_sem_calibracao": true,
+  "versoes": {
+    "python": "3.13.13",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.2",
+    "joblib": "1.5.3"
+  },
+  "plataforma": "macOS-26.2-arm64-arm-64bit-Mach-O",
+  "threads_blas": 1,
+  "classes": [
+    "Tem jogo",
+    "Jogador X venceu",
+    "Jogador O venceu",
+    "Empate"
+  ],
+  "criterio_selecao_configuracao": "F1 macro de validação; acurácia; kernel linear; menor C; menos vetores de suporte",
+  "criterio_selecao_abordagem": "F1 macro de validação; acurácia; menos vetores de suporte; menos características",
+  "parametros_fixos": {
+    "tol": 0.001,
+    "cache_size": 200,
+    "max_iter": -1,
+    "probability": false,
+    "class_weight": null,
+    "shrinking": true,
+    "decision_function_shape": "ovr"
+  },
+  "grade": [
+    {
+      "kernel": "linear",
+      "C": 0.01,
+      "gamma": null
+    },
+    {
+      "kernel": "linear",
+      "C": 0.1,
+      "gamma": null
+    },
+    {
+      "kernel": "linear",
+      "C": 1.0,
+      "gamma": null
+    },
+    {
+      "kernel": "linear",
+      "C": 10.0,
+      "gamma": null
+    },
+    {
+      "kernel": "linear",
+      "C": 100.0,
+      "gamma": null
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.01,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.01,
+      "gamma": 0.001
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.01,
+      "gamma": 0.01
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.01,
+      "gamma": 0.1
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.01,
+      "gamma": 1.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": 0.001
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": 0.01
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": 0.1
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": 1.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": 0.001
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": 0.01
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": 0.1
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": 1.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": 0.001
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": 0.01
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": 0.1
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": 1.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 100.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 100.0,
+      "gamma": 0.001
+    },
+    {
+      "kernel": "rbf",
+      "C": 100.0,
+      "gamma": 0.01
+    },
+    {
+      "kernel": "rbf",
+      "C": 100.0,
+      "gamma": 0.1
+    },
+    {
+      "kernel": "rbf",
+      "C": 100.0,
+      "gamma": 1.0
+    }
+  ],
+  "configuracoes_testadas": 60,
+  "avisos_convergencia": 0,
+  "abordagem_escolhida_pela_validacao": "abordagem_2",
+  "configuracoes_selecionadas": {
+    "abordagem_1": {
+      "kernel": "rbf",
+      "C": 100.0,
+      "gamma": 0.01
+    },
+    "abordagem_2": {
+      "kernel": "linear",
+      "C": 1.0,
+      "gamma": null
+    }
+  },
+  "features_modelo_exportado": [
+    "quantidade_x",
+    "quantidade_o",
+    "ocupada_superior_esquerda",
+    "ocupada_superior_centro",
+    "ocupada_superior_direita",
+    "ocupada_meio_esquerda",
+    "ocupada_meio_centro",
+    "ocupada_meio_direita",
+    "ocupada_inferior_esquerda",
+    "ocupada_inferior_centro",
+    "ocupada_inferior_direita",
+    "linhas_com_2_x",
+    "linhas_com_2_o",
+    "casas_vazias",
+    "jogador_da_vez"
+  ],
+  "ordem_classes_modelo": [
+    "Empate",
+    "Jogador O venceu",
+    "Jogador X venceu",
+    "Tem jogo"
+  ],
+  "vetores_suporte_por_classe": {
+    "Empate": 12,
+    "Jogador O venceu": 47,
+    "Jogador X venceu": 43,
+    "Tem jogo": 42
+  },
+  "repeticoes_tempo": 20,
+  "csvs_entrada_sha256": {
+    "dataset/processado/abordagem_1/treino.csv": "42caa655b49b785698fc2b47abc00cfbb7ae8986ce8e2b4272c4530176949acd",
+    "dataset/processado/abordagem_1/validacao.csv": "376790bd5e71d80e6112b9063ecf7e35ea092ddc9e90eab6f63d666aa8b5be7a",
+    "dataset/processado/abordagem_1/teste.csv": "067a686342bd0f5cb76997ab0164615df11562c6b7d6404739c607aeab5e01c7",
+    "dataset/processado/abordagem_2/treino.csv": "0e980f12615fd9faeb6eb0b84c0eb6f28701b0537db6d1b91434100524cf693c",
+    "dataset/processado/abordagem_2/validacao.csv": "8569e04fd508cdc38ab32235a6fe4e5266a31b8928851e8368a83e2f01987901",
+    "dataset/processado/abordagem_2/teste.csv": "c77d5c51116508d5632c8fda84a15a57d7fdb4424d1de3d2103154267b03b996"
+  }
+}

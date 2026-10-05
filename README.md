@@ -1,12 +1,19 @@
-# ai-tic-tac-toe
+# Jogo da velha — Trabalho 1 de Inteligência Artificial
 
-Preparação dos dados do trabalho de Inteligência Artificial de Amanda Wilmsen e Kamilah Santos.
-O objetivo dos classificadores será reconhecer quatro estados: **Tem jogo**, **Jogador X venceu**,
-**Jogador O venceu** e **Empate**.
+**Autoras:** Amanda Wilmsen e Kamilah Santos.
+
+O projeto investiga a classificação de estados de um tabuleiro 3×3 em **Tem jogo**,
+**Jogador X venceu**, **Jogador O venceu** e **Empate**. O classificador observa o tabuleiro
+após cada jogada. Na interface, o jogador humano utiliza X e a máquina utiliza O,
+escolhendo suas jogadas aleatoriamente.
+
+O repositório reúne a preparação dos dados, os experimentos e a interface de avaliação.
+As etapas ainda necessárias para a entrega estão indicadas ao final deste documento.
 
 ## Executar o notebook
 
-Na pasta do projeto, instale as dependências no ambiente Python que será usado pelo notebook:
+Utilize Python 3.11 ou superior. Na raiz do projeto, instale as dependências no ambiente
+que será selecionado como kernel dos notebooks:
 
 ```sh
 python -m pip install -r requirements.txt
@@ -15,6 +22,9 @@ python -m pip install -r requirements.txt
 Abra [tic_tac_toe.ipynb](tic_tac_toe.ipynb), selecione esse ambiente como kernel e execute as células
 de cima para baixo. O notebook contém as explicações, o código e os resultados das seis etapas
 de preparação. A última etapa atualiza os arquivos em `dataset/processado/`.
+
+A versão do scikit-learn está fixada em `requirements.txt` para corresponder aos modelos
+exportados de MLP e SVM e permitir seu carregamento no front end.
 
 Os CSVs preparados já estão disponíveis. As versões usadas para gerá-los estão registradas em
 [resumo_preparacao.json](dataset/processado/resumo_preparacao.json).
@@ -47,7 +57,8 @@ Somente depois da divisão, os empates do treino foram reamostrados para equilib
 Reamostrar repete tabuleiros do treino; não cria novos estados distintos. Os IDs repetidos nesse
 conjunto são intencionais. Nenhum ID aparece em mais de uma divisão. Rotações e reflexões
 equivalentes podem aparecer em divisões diferentes, pois não houve agrupamento por simetria.
-A escassez de empates limita a precisão de sua avaliação; apresentar métricas por classe e médias macro.
+A escassez de empates aumenta a incerteza de sua avaliação. Por esse motivo, os experimentos
+apresentam métricas por classe e médias macro, nas quais as quatro classes têm o mesmo peso.
 
 ## Arquivos dos dados tratados
 
@@ -80,4 +91,73 @@ escalas, ajuste o transformador somente no treino. Preserve as divisões entre a
 
 A base selecionada e as divisões anteriores à reamostragem estão em `dataset/processado/`.
 Mais detalhes estão no [README dos dados](dataset/processado/README.md) e no notebook.
-O treinamento dos classificadores e a comparação das abordagens serão as próximas etapas do trabalho.
+
+## Experimentos de classificação
+
+Os notebooks usam os mesmos CSVs de treino, validação e teste:
+
+- [k-NN](dataset/processado/knn/knn.ipynb).
+- [Árvore de decisão](dataset/processado/arvoreDecisao/arvore_decisao.ipynb).
+- [MLP](dataset/processado/mlp/mlp.ipynb): rede neural com padronização ajustada no treino,
+  seleção dos parâmetros pela validação, métricas por classe, gráficos e medição de custo.
+- [SVM](dataset/processado/svm/svm.ipynb): comparação dos kernels linear e RBF, com
+  padronização ajustada no treino e seleção de C e gamma pela validação.
+
+Execute as células de cada notebook na ordem. Na MLP e no SVM, a última etapa salva tabelas,
+gráficos, documentação e o modelo com seu padronizador nas respectivas pastas `resultados/`.
+Os parâmetros são escolhidos antes da avaliação no teste. A comparação final dos cinco
+classificadores ainda faz parte das etapas seguintes do trabalho.
+
+Os tempos registrados medem o ajuste e a previsão do modelo sobre as representações já
+preparadas. Eles não incluem leitura dos CSVs, extração das características do tabuleiro
+ou comunicação da interface. A comparação deve considerar as condições de execução,
+além das métricas de classificação e das diferenças entre treino e validação.
+
+## Front end
+
+Na raiz do projeto, execute `python front_end/servidor.py` no ambiente das dependências
+e abra **http://127.0.0.1:8765**. O ambiente precisa corresponder ao utilizado para exportar
+os modelos, conforme registrado nos resumos dos experimentos.
+
+Você joga X e a máquina joga O aleatoriamente. A interface mostra a previsão de MLP ou SVM
+a cada jogada e contabiliza acertos, erros e acurácia. Uma conferência pelas regras permite
+continuar diante de um fim anunciado incorretamente e encerrar diante de um fim não detectado,
+como pede o enunciado. Os registros podem ser exportados para o relatório.
+
+Consulte o [README do front end](front_end/README.md) para entender o código, os registros
+e como avaliar a solução durante partidas reais. O modelo definitivo poderá ser escolhido
+depois da comparação dos cinco classificadores. O seletor atual auxilia a avaliação de
+MLP e SVM; a possibilidade de escolher modelos na interface é um recurso adicional.
+
+## Atendimento ao enunciado e etapas de entrega
+
+| Requisito | Situação documentada neste repositório |
+| --- | --- |
+| Análise e adequação do dataset UCI | Concluídas no notebook de preparação, com justificativas e contagens por classe. |
+| Amostragem e balanceamento | 616 tabuleiros distintos; reamostragem somente no treino. A escassez de empates está documentada. |
+| Duas abordagens de pré-processamento | Implementadas e avaliadas nos quatro classificadores disponíveis. |
+| Mesmas divisões físicas de treino, validação e teste | CSVs compartilhados pelos experimentos; seleção de parâmetros pela validação. |
+| Pelo menos cinco classificadores | k-NN, árvore de decisão, MLP e SVM disponíveis; falta o quinto algoritmo. |
+| Parâmetros, métricas e análise dos algoritmos | Documentados nos notebooks, incluindo topologias da MLP e explicação do SVM. O quinto algoritmo deve seguir o mesmo procedimento. |
+| Comparação geral e escolha do classificador | Falta consolidar tabelas e gráficos dos cinco algoritmos, comparar desempenho e custo e justificar a escolha. |
+| Interface, mensagens e contagem de acertos/erros | Implementadas; a configuração definitiva depende da comparação dos algoritmos. |
+| Resultados da interação com usuários | A interface exporta registros reais; os resultados devem integrar o relatório e corresponder ao modelo definitivo. |
+| Relatório em PPT | Deve reunir introdução, dados, pré-processamento, algoritmos, justificativas, resultados, comparação e conclusão. |
+| Vídeo de até 10 minutos | Deve apresentar o processo e o relatório, com todas as integrantes aparecendo e explicando suas partes. |
+| Declaração de uso de ferramentas de IA | Registrada abaixo e nos materiais revisados; deve acompanhar a apresentação da entrega. |
+
+O relatório deve explicar o funcionamento dos dois algoritmos de livre escolha e registrar
+as dificuldades e os aprendizados. Cada integrante deve desenvolver pelo menos um
+classificador e compreender seu código, parâmetros e resultados. A inscrição do grupo,
+o prazo e a apresentação devem seguir as orientações do Moodle. O vídeo deve ser gravado
+pelas integrantes, sem substituição de suas falas ou imagens por IA; sua entrega é obrigatória.
+
+## Uso de ferramentas de IA
+
+O Codex, da OpenAI, foi utilizado para explicar conceitos, auxiliar na análise e transformação
+dos dados, gerar e organizar código e documentação dos notebooks de preparação, MLP e SVM,
+executar os experimentos de MLP e SVM, criar e documentar o front end, revisar os textos e
+comentários dos notebooks de k-NN e árvore de decisão, ajustar seus caminhos de leitura
+e verificar os resultados.
+Esse registro identifica as atividades em que houve assistência de IA, conforme solicitado
+no enunciado.
