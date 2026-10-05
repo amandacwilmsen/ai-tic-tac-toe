@@ -24,7 +24,7 @@ de cima para baixo. O notebook contém as explicações, o código e os resultad
 de preparação. A última etapa atualiza os arquivos em `dataset/processado/`.
 
 A versão do scikit-learn está fixada em `requirements.txt` para corresponder aos modelos
-exportados de MLP e SVM e permitir seu carregamento no front end.
+exportados dos cinco classificadores e permitir seu carregamento no front end.
 
 Os CSVs preparados já estão disponíveis. As versões usadas para gerá-los estão registradas em
 [resumo_preparacao.json](dataset/processado/resumo_preparacao.json).
@@ -102,9 +102,13 @@ Os notebooks usam os mesmos CSVs de treino, validação e teste:
   seleção dos parâmetros pela validação, métricas por classe, gráficos e medição de custo.
 - [SVM](dataset/processado/svm/svm.ipynb): comparação dos kernels linear e RBF, com
   padronização ajustada no treino e seleção de C e gamma pela validação.
+- [Random Forest](dataset/processado/randomForest/random_forest.ipynb): comparação do
+  número de árvores, profundidade máxima e tamanho mínimo das folhas pela validação.
 
 Execute as células de cada notebook na ordem. Na MLP e no SVM, a última etapa salva tabelas,
 gráficos, documentação e o modelo com seu padronizador nas respectivas pastas `resultados/`.
+Os notebooks de k-NN, árvore de decisão e Random Forest também exportam seus modelos
+selecionados pela validação, metadados e previsões de teste na etapa final.
 Os parâmetros são escolhidos antes da avaliação no teste. A comparação final dos cinco
 classificadores ainda faz parte das etapas seguintes do trabalho.
 
@@ -119,15 +123,16 @@ Na raiz do projeto, execute `python front_end/servidor.py` no ambiente das depen
 e abra **http://127.0.0.1:8765**. O ambiente precisa corresponder ao utilizado para exportar
 os modelos, conforme registrado nos resumos dos experimentos.
 
-Você joga X e a máquina joga O aleatoriamente. A interface mostra a previsão de MLP ou SVM
+Você joga X e a máquina joga O aleatoriamente. A interface permite escolher MLP, SVM,
+k-NN, árvore de decisão ou Random Forest, e mostra a previsão do modelo escolhido
 a cada jogada e contabiliza acertos, erros e acurácia. Uma conferência pelas regras permite
 continuar diante de um fim anunciado incorretamente e encerrar diante de um fim não detectado,
 como pede o enunciado. Os registros podem ser exportados para o relatório.
 
 Consulte o [README do front end](front_end/README.md) para entender o código, os registros
 e como avaliar a solução durante partidas reais. O modelo definitivo poderá ser escolhido
-depois da comparação dos cinco classificadores. O seletor atual auxilia a avaliação de
-MLP e SVM; a possibilidade de escolher modelos na interface é um recurso adicional.
+depois da comparação dos cinco classificadores. O seletor auxilia a avaliação das cinco
+opções; a possibilidade de escolher modelos na interface é um recurso adicional.
 
 ## Atendimento ao enunciado e etapas de entrega
 
@@ -135,10 +140,10 @@ MLP e SVM; a possibilidade de escolher modelos na interface é um recurso adicio
 | --- | --- |
 | Análise e adequação do dataset UCI | Concluídas no notebook de preparação, com justificativas e contagens por classe. |
 | Amostragem e balanceamento | 616 tabuleiros distintos; reamostragem somente no treino. A escassez de empates está documentada. |
-| Duas abordagens de pré-processamento | Implementadas e avaliadas nos quatro classificadores disponíveis. |
+| Duas abordagens de pré-processamento | Implementadas e avaliadas nos cinco classificadores disponíveis. |
 | Mesmas divisões físicas de treino, validação e teste | CSVs compartilhados pelos experimentos; seleção de parâmetros pela validação. |
-| Pelo menos cinco classificadores | k-NN, árvore de decisão, MLP e SVM disponíveis; falta o quinto algoritmo. |
-| Parâmetros, métricas e análise dos algoritmos | Documentados nos notebooks, incluindo topologias da MLP e explicação do SVM. O quinto algoritmo deve seguir o mesmo procedimento. |
+| Pelo menos cinco classificadores | k-NN, árvore de decisão, MLP, SVM e Random Forest disponíveis. |
+| Parâmetros, métricas e análise dos algoritmos | Registrados nos notebooks, incluindo topologias da MLP. As explicações e justificativas devem compor o relatório. |
 | Comparação geral e escolha do classificador | Falta consolidar tabelas e gráficos dos cinco algoritmos, comparar desempenho e custo e justificar a escolha. |
 | Interface, mensagens e contagem de acertos/erros | Implementadas; a configuração definitiva depende da comparação dos algoritmos. |
 | Resultados da interação com usuários | A interface exporta registros reais; os resultados devem integrar o relatório e corresponder ao modelo definitivo. |
@@ -158,6 +163,8 @@ O Codex, da OpenAI, foi utilizado para explicar conceitos, auxiliar na análise 
 dos dados, gerar e organizar código e documentação dos notebooks de preparação, MLP e SVM,
 executar os experimentos de MLP e SVM, criar e documentar o front end, revisar os textos e
 comentários dos notebooks de k-NN e árvore de decisão, ajustar seus caminhos de leitura
-e verificar os resultados.
+e verificar os resultados. Também auxiliou na exportação dos modelos de k-NN, árvore
+de decisão e Random Forest, na atualização da execução do notebook de k-NN para
+corresponder ao modelo exportado e na inclusão dos cinco classificadores no seletor da interface.
 Esse registro identifica as atividades em que houve assistência de IA, conforme solicitado
 no enunciado.
