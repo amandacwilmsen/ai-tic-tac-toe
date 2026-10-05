@@ -42,7 +42,7 @@ Os CSVs das abordagens foram relidos e comparados às tabelas em memória, inclu
 
 ## Limitações
 
-- Somente 16 empates distintos; a reamostragem do treino nao cria novos estados.
-- Validacao e teste possuem poucos empates; apresentar metricas por classe e medias macro.
-- Rotacoes e reflexoes equivalentes podem aparecer em conjuntos diferentes.
-- As caracteristicas da abordagem 2 perdem parte da informacao do tabuleiro.
+- Há somente 16 empates distintos; a reamostragem do treino não cria novos estados.
+- Validação e teste possuem poucos empates; a análise deve incluir métricas por classe e médias macro.
+- Rotações e reflexões equivalentes podem aparecer em conjuntos diferentes.
+- As características da abordagem 2 perdem parte da informação do tabuleiro.

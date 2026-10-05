@@ -1,0 +1,187 @@
+abordagem,id_tabuleiro,estado_real,estado_previsto,acertou
+abordagem_1,xooxxbxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,oxobobxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,ooxxxxoox,Jogador X venceu,Jogador X venceu,True
+abordagem_1,oooxbxxbb,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xboxoxoxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oooxxbbbx,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oooxbbxbx,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oxxxbobox,Tem jogo,Empate,False
+abordagem_1,xoxooobxx,Jogador O venceu,Jogador O venceu,True
+abordagem_1,ooxxxooxx,Empate,Tem jogo,False
+abordagem_1,xxoxobxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xobxobxbb,Jogador X venceu,Jogador X venceu,True
+abordagem_1,bbobxbbxo,Tem jogo,Tem jogo,True
+abordagem_1,obboxxxob,Tem jogo,Tem jogo,True
+abordagem_1,xobxxboxo,Tem jogo,Empate,False
+abordagem_1,bxoxoboxb,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oxxbobbxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xxoxboxob,Jogador X venceu,Jogador X venceu,True
+abordagem_1,oxobobxbx,Tem jogo,Tem jogo,True
+abordagem_1,xxoooxxox,Empate,Empate,True
+abordagem_1,oxbxobbxb,Tem jogo,Tem jogo,True
+abordagem_1,oxoxboxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xboxoxobb,Jogador O venceu,Jogador O venceu,True
+abordagem_1,bxoxbxobo,Tem jogo,Jogador O venceu,False
+abordagem_1,xbxboxobb,Tem jogo,Tem jogo,True
+abordagem_1,xbobxbobx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xbxxbobbo,Tem jogo,Tem jogo,True
+abordagem_1,boxooxbxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,bbbxxxobo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xbxxxoooo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xxxbbbobo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,boxobxxxo,Tem jogo,Tem jogo,True
+abordagem_1,oooxoxbxx,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oxooxbbxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,bboxxxobb,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xoboobxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,bxobobbxb,Tem jogo,Tem jogo,True
+abordagem_1,obxxoxbbo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,obxxxbbbo,Tem jogo,Tem jogo,True
+abordagem_1,xbxoooxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,boxoxxobx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,oxxxoboxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xxbbobobx,Tem jogo,Tem jogo,True
+abordagem_1,ooxxxxbbo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,obxbxbobx,Tem jogo,Jogador X venceu,False
+abordagem_1,xoxbxbxoo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xbboxbobx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xboxoxoox,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xxoobxbbb,Tem jogo,Tem jogo,True
+abordagem_1,bbxboxbox,Jogador X venceu,Jogador X venceu,True
+abordagem_1,oxoobbxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,boxxxbboo,Tem jogo,Jogador O venceu,False
+abordagem_1,xooxoxbox,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xxxobobox,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xoxooxoxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,oboxboxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,obxxooxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xbooxobxx,Jogador X venceu,Jogador X venceu,True
+abordagem_1,obxxobbxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xxbbooxbo,Tem jogo,Jogador O venceu,False
+abordagem_1,xobboxxxo,Tem jogo,Empate,False
+abordagem_1,ooxboxxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,bbobxxoxb,Tem jogo,Jogador X venceu,False
+abordagem_1,xboooxoxx,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oxxbobxbo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,bxbbxoobb,Tem jogo,Tem jogo,True
+abordagem_1,xbbooxbox,Tem jogo,Jogador O venceu,False
+abordagem_1,xobxoxbob,Jogador O venceu,Jogador O venceu,True
+abordagem_1,ooxxoxxbo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xboxoxbxo,Tem jogo,Tem jogo,True
+abordagem_1,bbboxbbox,Tem jogo,Tem jogo,True
+abordagem_1,oxxoboxox,Tem jogo,Jogador O venceu,False
+abordagem_1,xxxboobxo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xbbxobxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,boxoxxxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,bbbbbxobx,Tem jogo,Tem jogo,True
+abordagem_1,obbxboxxb,Tem jogo,Tem jogo,True
+abordagem_1,xbxoooxox,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oxxobxoxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,boxxxxboo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,xoxobxbox,Jogador X venceu,Jogador X venceu,True
+abordagem_1,boxxboxbo,Tem jogo,Tem jogo,True
+abordagem_1,boxxbxbob,Tem jogo,Jogador X venceu,False
+abordagem_1,xbobboxbx,Tem jogo,Jogador X venceu,False
+abordagem_1,oooxoxxxb,Jogador O venceu,Jogador O venceu,True
+abordagem_1,bbxxxoxoo,Jogador X venceu,Jogador X venceu,True
+abordagem_1,ooxoxboxx,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oboxxoxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_1,xoxoxxoxo,Empate,Tem jogo,False
+abordagem_1,bxbbobbbx,Tem jogo,Tem jogo,True
+abordagem_1,xbxobxoox,Jogador X venceu,Jogador X venceu,True
+abordagem_1,boxxoxbob,Jogador O venceu,Jogador O venceu,True
+abordagem_1,oxxooxoxb,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xooxxbxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,oxobobxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,ooxxxxoox,Jogador X venceu,Jogador X venceu,True
+abordagem_2,oooxbxxbb,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xboxoxoxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oooxxbbbx,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oooxbbxbx,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oxxxbobox,Tem jogo,Jogador X venceu,False
+abordagem_2,xoxooobxx,Jogador O venceu,Jogador O venceu,True
+abordagem_2,ooxxxooxx,Empate,Empate,True
+abordagem_2,xxoxobxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,xobxobxbb,Jogador X venceu,Jogador X venceu,True
+abordagem_2,bbobxbbxo,Tem jogo,Tem jogo,True
+abordagem_2,obboxxxob,Tem jogo,Tem jogo,True
+abordagem_2,xobxxboxo,Tem jogo,Tem jogo,True
+abordagem_2,bxoxoboxb,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oxxbobbxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xxoxboxob,Jogador X venceu,Jogador X venceu,True
+abordagem_2,oxobobxbx,Tem jogo,Tem jogo,True
+abordagem_2,xxoooxxox,Empate,Empate,True
+abordagem_2,oxbxobbxb,Tem jogo,Tem jogo,True
+abordagem_2,oxoxboxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xboxoxobb,Jogador O venceu,Jogador O venceu,True
+abordagem_2,bxoxbxobo,Tem jogo,Tem jogo,True
+abordagem_2,xbxboxobb,Tem jogo,Tem jogo,True
+abordagem_2,xbobxbobx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,xbxxbobbo,Tem jogo,Tem jogo,True
+abordagem_2,boxooxbxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,bbbxxxobo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,xbxxxoooo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xxxbbbobo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,boxobxxxo,Tem jogo,Jogador X venceu,False
+abordagem_2,oooxoxbxx,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oxooxbbxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,bboxxxobb,Jogador X venceu,Jogador X venceu,True
+abordagem_2,xoboobxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,bxobobbxb,Tem jogo,Tem jogo,True
+abordagem_2,obxxoxbbo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,obxxxbbbo,Tem jogo,Tem jogo,True
+abordagem_2,xbxoooxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,boxoxxobx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,oxxxoboxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xxbbobobx,Tem jogo,Tem jogo,True
+abordagem_2,ooxxxxbbo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,obxbxbobx,Tem jogo,Tem jogo,True
+abordagem_2,xoxbxbxoo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,xbboxbobx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,xboxoxoox,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xxoobxbbb,Tem jogo,Tem jogo,True
+abordagem_2,bbxboxbox,Jogador X venceu,Jogador X venceu,True
+abordagem_2,oxoobbxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,boxxxbboo,Tem jogo,Tem jogo,True
+abordagem_2,xooxoxbox,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xxxobobox,Jogador X venceu,Tem jogo,False
+abordagem_2,xoxooxoxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,oboxboxxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,obxxooxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xbooxobxx,Jogador X venceu,Jogador X venceu,True
+abordagem_2,obxxobbxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xxbbooxbo,Tem jogo,Tem jogo,True
+abordagem_2,xobboxxxo,Tem jogo,Jogador X venceu,False
+abordagem_2,ooxboxxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,bbobxxoxb,Tem jogo,Tem jogo,True
+abordagem_2,xboooxoxx,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oxxbobxbo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,bxbbxoobb,Tem jogo,Tem jogo,True
+abordagem_2,xbbooxbox,Tem jogo,Tem jogo,True
+abordagem_2,xobxoxbob,Jogador O venceu,Jogador O venceu,True
+abordagem_2,ooxxoxxbo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xboxoxbxo,Tem jogo,Jogador X venceu,False
+abordagem_2,bbboxbbox,Tem jogo,Tem jogo,True
+abordagem_2,oxxoboxox,Tem jogo,Jogador O venceu,False
+abordagem_2,xxxboobxo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,xbbxobxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,boxoxxxbo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,bbbbbxobx,Tem jogo,Tem jogo,True
+abordagem_2,obbxboxxb,Tem jogo,Tem jogo,True
+abordagem_2,xbxoooxox,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oxxobxoxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,boxxxxboo,Jogador X venceu,Tem jogo,False
+abordagem_2,xoxobxbox,Jogador X venceu,Tem jogo,False
+abordagem_2,boxxboxbo,Tem jogo,Tem jogo,True
+abordagem_2,boxxbxbob,Tem jogo,Tem jogo,True
+abordagem_2,xbobboxbx,Tem jogo,Tem jogo,True
+abordagem_2,oooxoxxxb,Jogador O venceu,Jogador O venceu,True
+abordagem_2,bbxxxoxoo,Jogador X venceu,Jogador X venceu,True
+abordagem_2,ooxoxboxx,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oboxxoxxo,Jogador O venceu,Jogador O venceu,True
+abordagem_2,xoxoxxoxo,Empate,Empate,True
+abordagem_2,bxbbobbbx,Tem jogo,Tem jogo,True
+abordagem_2,xbxobxoox,Jogador X venceu,Jogador X venceu,True
+abordagem_2,boxxoxbob,Jogador O venceu,Jogador O venceu,True
+abordagem_2,oxxooxoxb,Jogador O venceu,Jogador O venceu,True

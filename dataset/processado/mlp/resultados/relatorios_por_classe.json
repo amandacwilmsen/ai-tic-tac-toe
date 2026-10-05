@@ -1,0 +1,80 @@
+{
+  "abordagem_1": {
+    "Tem jogo": {
+      "precision": 0.9,
+      "recall": 0.6,
+      "f1-score": 0.72,
+      "support": 30.0
+    },
+    "Jogador X venceu": {
+      "precision": 0.8823529411764706,
+      "recall": 1.0,
+      "f1-score": 0.9375,
+      "support": 30.0
+    },
+    "Jogador O venceu": {
+      "precision": 0.8571428571428571,
+      "recall": 1.0,
+      "f1-score": 0.9230769230769231,
+      "support": 30.0
+    },
+    "Empate": {
+      "precision": 0.25,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.2857142857142857,
+      "support": 3.0
+    },
+    "accuracy": 0.8494623655913979,
+    "macro avg": {
+      "precision": 0.7223739495798319,
+      "recall": 0.7333333333333334,
+      "f1-score": 0.7165728021978022,
+      "support": 93.0
+    },
+    "weighted avg": {
+      "precision": 0.859514773651396,
+      "recall": 0.8494623655913979,
+      "f1-score": 0.8416607585962425,
+      "support": 93.0
+    }
+  },
+  "abordagem_2": {
+    "Tem jogo": {
+      "precision": 0.8928571428571429,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.8620689655172413,
+      "support": 30.0
+    },
+    "Jogador X venceu": {
+      "precision": 0.8709677419354839,
+      "recall": 0.9,
+      "f1-score": 0.8852459016393442,
+      "support": 30.0
+    },
+    "Jogador O venceu": {
+      "precision": 0.967741935483871,
+      "recall": 1.0,
+      "f1-score": 0.9836065573770492,
+      "support": 30.0
+    },
+    "Empate": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "accuracy": 0.9139784946236559,
+    "macro avg": {
+      "precision": 0.9328917050691244,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9327303561334086,
+      "support": 93.0
+    },
+    "weighted avg": {
+      "precision": 0.9134086517020961,
+      "recall": 0.9139784946236559,
+      "f1-score": 0.913200459526979,
+      "support": 93.0
+    }
+  }
+}

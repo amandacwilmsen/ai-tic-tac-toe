@@ -1,0 +1,3 @@
+codigo_abordagem,abordagem,topologia,ativacao,alpha,n_parametros,f1_treino,val_acc,val_f1_macro,gap_treino_val
+abordagem_1,A1 (tabuleiro),9 → 64 → 32 → 4,relu,1.0,2852,1.0,0.8586956521739131,0.8087339743589743,0.19126602564102568
+abordagem_2,A2 (características),15 → 64 → 32 → 4,relu,1.0,3236,0.9910313191307102,0.9347826086956522,0.949020737327189,0.04201058180352124
