@@ -1,0 +1,122 @@
+{
+  "algoritmo_escolhido": "svm",
+  "abordagem_escolhida": "abordagem_2",
+  "criterio": "Equilíbrio entre validação, diferença treino–validação e custo; comparação descritiva do teste",
+  "parametros_escolhidos": {
+    "kernel": "linear",
+    "C": 1.0,
+    "gamma": null
+  },
+  "configuracoes_fixadas": {
+    "knn": {
+      "abordagem_1": {
+        "k": 7,
+        "metrica": "manhattan",
+        "pesos": "uniform"
+      },
+      "abordagem_2": {
+        "k": 3,
+        "metrica": "manhattan",
+        "pesos": "uniform"
+      }
+    },
+    "arvore": {
+      "abordagem_1": {
+        "criterio": "gini",
+        "max_depth": 8,
+        "min_leaf": 1
+      },
+      "abordagem_2": {
+        "criterio": "gini",
+        "max_depth": 8,
+        "min_leaf": 1
+      }
+    },
+    "random_forest": {
+      "abordagem_1": {
+        "n_arvores": 200,
+        "max_depth": null,
+        "min_leaf": 2
+      },
+      "abordagem_2": {
+        "n_arvores": 10,
+        "max_depth": null,
+        "min_leaf": 1
+      }
+    },
+    "mlp": {
+      "abordagem_1": {
+        "camadas": [
+          64,
+          32
+        ],
+        "ativacao": "relu",
+        "alpha": 1.0
+      },
+      "abordagem_2": {
+        "camadas": [
+          64,
+          32
+        ],
+        "ativacao": "relu",
+        "alpha": 1.0
+      }
+    },
+    "svm": {
+      "abordagem_1": {
+        "kernel": "rbf",
+        "C": 100.0,
+        "gamma": 0.01
+      },
+      "abordagem_2": {
+        "kernel": "linear",
+        "C": 1.0,
+        "gamma": null
+      }
+    }
+  },
+  "versoes": {
+    "python": "3.13.13",
+    "scikit_learn": "1.9.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.2"
+  },
+  "plataforma": "macOS-26.2-arm64-arm-64bit-Mach-O",
+  "threads_blas": 1,
+  "repeticoes_tempo": 20,
+  "tabuleiros_por_lote": 93,
+  "fontes_sha256": {
+    "dataset/processado/abordagem_1/treino.csv": "42caa655b49b785698fc2b47abc00cfbb7ae8986ce8e2b4272c4530176949acd",
+    "dataset/processado/abordagem_1/validacao.csv": "376790bd5e71d80e6112b9063ecf7e35ea092ddc9e90eab6f63d666aa8b5be7a",
+    "dataset/processado/abordagem_1/teste.csv": "067a686342bd0f5cb76997ab0164615df11562c6b7d6404739c607aeab5e01c7",
+    "dataset/processado/abordagem_2/treino.csv": "0e980f12615fd9faeb6eb0b84c0eb6f28701b0537db6d1b91434100524cf693c",
+    "dataset/processado/abordagem_2/validacao.csv": "8569e04fd508cdc38ab32235a6fe4e5266a31b8928851e8368a83e2f01987901",
+    "dataset/processado/abordagem_2/teste.csv": "c77d5c51116508d5632c8fda84a15a57d7fdb4424d1de3d2103154267b03b996",
+    "dataset/processado/knn/resultados/resumo_experimento.json": "a85af421b72798c1c6346b80b88e26b111ddc6e194522d4d27d56fb1b77ea165",
+    "dataset/processado/arvoreDecisao/resultados/resumo_experimento.json": "a59d5d3336f9303031123aeaf89fc861160067ca33518c91ff5766fd1abd733b",
+    "dataset/processado/randomForest/resultados/resumo_experimento.json": "3a80cd7146603a4217f34551047536fdc9b44108f8fb300cda047cee26c73d4e",
+    "dataset/processado/mlp/resultados/resumo_experimento.json": "03cf44534025323244c77b925e27b7878715dc1f87dfc3f9005bc5abb3c03083",
+    "dataset/processado/svm/resultados/resumo_experimento.json": "7185e3e20425b0c63070c7d32c981fe37df1328dfaa661163550e39855591e21",
+    "dataset/processado/knn/resultados/configuracoes_selecionadas.csv": "2af35d33ac85e83fde67a108f47d2bf5c8c90eb37d5dc4a218f9e8eb6b155399",
+    "dataset/processado/knn/resultados/metricas_teste.csv": "6307d2037213724c4f53a23ac5f0a70051f5db1011f359258f5459cc1f313629",
+    "dataset/processado/knn/resultados/previsoes_teste.csv": "2ecec8d9dd9ae5f3e0dd5d70c5c0fbd1df068c74495960714fbe1f0c288bc4bf",
+    "dataset/processado/arvoreDecisao/resultados/configuracoes_selecionadas.csv": "56f9f3584c841aa720fed093c63356c0db1f58f9175fd3de1e293065b9caea2c",
+    "dataset/processado/arvoreDecisao/resultados/metricas_teste.csv": "881846d0c7c78bceae90c94be0ea677a8282acce9929b1789cc899e382e445bc",
+    "dataset/processado/arvoreDecisao/resultados/previsoes_teste.csv": "31fcabbdc514e2a5144a507fe88e083040f8e11cdefd49fd53ed24e2fa9df6ce",
+    "dataset/processado/randomForest/resultados/configuracoes_selecionadas.csv": "4a149a3a4e90c436f7af4f1273e1ae96716f4deadaec2485185f58bcbe571c33",
+    "dataset/processado/randomForest/resultados/metricas_teste.csv": "976f799283ee36937499bbe2c9af03ca17b1771a745ebe37642e33ba5929d6df",
+    "dataset/processado/randomForest/resultados/previsoes_teste.csv": "c96af72509910770af3c37a052ddb46498bf69e0cce16be247f51741fed2cc63",
+    "dataset/processado/mlp/resultados/configuracoes_selecionadas.csv": "791aec0383b2d1761ec1090ca09da303a40f2d18d005a8d1e0f67a53b744c827",
+    "dataset/processado/mlp/resultados/metricas_teste.csv": "765581e48cddbe8b3b3069218b7ac9644ba670081de9aefed2fcd773ac172970",
+    "dataset/processado/mlp/resultados/previsoes_teste.csv": "c4fcb1e9e5697d674cdd76e4ba2ff305e6efc872836615f5e3f1410e33d02720",
+    "dataset/processado/svm/resultados/configuracoes_selecionadas.csv": "f2101345ee3d6385dafbf8eee15202acf46341ea4cd30bcf161c380ce8535ca1",
+    "dataset/processado/svm/resultados/metricas_teste.csv": "d4a6446d5a7b743a4a17e7a923c95b7bcb54576a88a501a740365e1e522cb52c",
+    "dataset/processado/svm/resultados/previsoes_teste.csv": "cd1e01fb5cfaaa744eccaf2e6042ce47a09444cb5b96481df954124778637b17",
+    "dataset/processado/knn/resultados/modelo_knn.joblib": "9f795bc62dc06d49a0aa357919f2db11579a12c9939a8ccc253911ea90e8003c",
+    "dataset/processado/arvoreDecisao/resultados/modelo_arvore.joblib": "f03a24520a7bc0d9702d440697b2f7245d22971cc96acc14e7176c658a402bb2",
+    "dataset/processado/randomForest/resultados/modelo_random_forest.joblib": "f965bfbab30784f175d58de6799d75938ef41adb38c534f2e619201b24e54820",
+    "dataset/processado/mlp/resultados/modelo_mlp.joblib": "403f356c9413505c96c64c3d528993ca3909c8c91549403ab91080804f4286a8",
+    "dataset/processado/svm/resultados/modelo_svm.joblib": "c1f883907e1f2a777ae475dba59b1db18a85543858e8bfc404b1acb0ae6571b0"
+  }
+}

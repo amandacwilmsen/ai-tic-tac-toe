@@ -2,169 +2,100 @@
 
 **Autoras:** Amanda Wilmsen e Kamilah Santos.
 
-O projeto investiga a classificação de estados de um tabuleiro 3×3 em **Tem jogo**,
-**Jogador X venceu**, **Jogador O venceu** e **Empate**. O classificador observa o tabuleiro
-após cada jogada. Na interface, o jogador humano utiliza X e a máquina utiliza O,
-escolhendo suas jogadas aleatoriamente.
+Classificamos o estado de um tabuleiro 3×3 em **Tem jogo**, **Jogador X venceu**,
+**Jogador O venceu** ou **Empate**. O classificador observa o tabuleiro após cada
+jogada. Na interface, a pessoa joga com X e a máquina joga com O aleatoriamente.
 
-O repositório reúne a preparação dos dados, os experimentos e a interface de avaliação.
-As etapas ainda necessárias para a entrega estão indicadas ao final deste documento.
+## Instalação e execução
 
-## Executar o notebook
-
-Utilize Python 3.11 ou superior. Na raiz do projeto, instale as dependências no ambiente
-que será selecionado como kernel dos notebooks:
+Use Python 3.11 ou superior e instale as dependências na raiz do projeto:
 
 ```sh
 python -m pip install -r requirements.txt
 ```
 
-Abra [tic_tac_toe.ipynb](tic_tac_toe.ipynb), selecione esse ambiente como kernel e execute as células
-de cima para baixo. O notebook contém as explicações, o código e os resultados das seis etapas
-de preparação. A última etapa atualiza os arquivos em `dataset/processado/`.
+Selecione esse ambiente como kernel dos notebooks. O scikit-learn está fixado em
+1.9.0 para corresponder aos modelos exportados e permitir seu carregamento no front.
 
-A versão do scikit-learn está fixada em `requirements.txt` para corresponder aos modelos
-exportados dos cinco classificadores e permitir seu carregamento no front end.
+Os dados, modelos e resultados já estão salvos. Para reproduzir o processo,
+execute as células de cada notebook de cima para baixo, nesta sequência:
 
-Os CSVs preparados já estão disponíveis. As versões usadas para gerá-los estão registradas em
-[resumo_preparacao.json](dataset/processado/resumo_preparacao.json).
+1. [Preparação dos dados](tic_tac_toe.ipynb).
+2. Experimentos individuais dos cinco classificadores, em qualquer ordem.
+3. [Comparação dos classificadores](dataset/processado/comparacao/comparacao_classificadores.ipynb).
+4. Avaliação durante partidas no front end.
 
-## Dataset e decisões
+## Dados preparados
 
 Fonte: Aha, D. (1991). *Tic-Tac-Toe Endgame*, UCI Machine Learning Repository,
 [DOI 10.24432/C5688J](https://doi.org/10.24432/C5688J), licença CC BY 4.0.
 Os arquivos originais em `dataset/` foram preservados.
 
-O original tem 958 tabuleiros finais, sem valores ausentes nem tabuleiros duplicados.
-Seus rótulos foram separados em 626 vitórias de X, 316 vitórias de O e 16 empates.
-Para acrescentar a classe **Tem jogo**, foram enumerados estados legais com X começando,
-alternância de jogadores e interrupção após vitória ou empate.
+O original contém 958 tabuleiros finais: 626 vitórias de X, 316 vitórias de O e
+16 empates. Acrescentamos estados intermediários legais e selecionamos **616
+tabuleiros distintos**, com semente 42. A divisão é estratificada, com aproximadamente
+70% para treino, 15% para validação e 15% para teste. O balanceamento repete apenas
+os empates do treino, depois da divisão.
 
-Selecionamos 200 exemplos de cada uma das três classes mais numerosas e os 16 empates
-disponíveis: **616 tabuleiros distintos**. A seleção garante ao menos um exemplo de cada
-número de jogadas disponível por classe e completa as vagas por sorteio com semente 42.
-
-A divisão estratificada usa aproximadamente 70% para treino, 15% para validação e 15% para teste.
-Somente depois da divisão, os empates do treino foram reamostrados para equilibrar as classes.
-
-| Estado | Treino distinto | Treino após reamostragem | Validação | Teste |
+| Classe | Treino distinto | Treino balanceado | Validação | Teste |
 | --- | ---: | ---: | ---: | ---: |
 | Tem jogo | 140 | 140 | 30 | 30 |
 | Jogador X venceu | 140 | 140 | 30 | 30 |
 | Jogador O venceu | 140 | 140 | 30 | 30 |
 | Empate | 11 | 140 | 2 | 3 |
 
-Reamostrar repete tabuleiros do treino; não cria novos estados distintos. Os IDs repetidos nesse
-conjunto são intencionais. Nenhum ID aparece em mais de uma divisão. Rotações e reflexões
-equivalentes podem aparecer em divisões diferentes, pois não houve agrupamento por simetria.
-A escassez de empates aumenta a incerteza de sua avaliação. Por esse motivo, os experimentos
-apresentam métricas por classe e médias macro, nas quais as quatro classes têm o mesmo peso.
+As pastas [abordagem_1](dataset/processado/abordagem_1) e
+[abordagem_2](dataset/processado/abordagem_2) contêm `treino.csv`, `validacao.csv`
+e `teste.csv`, com os mesmos IDs, rótulos e ordem. A1 utiliza nove casas numéricas
+(`b=0`, `x=1`, `o=-1`); A2 utiliza 15 características derivadas.
 
-## Arquivos dos dados tratados
+`id_tabuleiro` serve apenas para auditoria, e `estado` é a resposta: ambas as
+colunas são excluídas das entradas. A padronização, quando utilizada, é ajustada
+somente no treino. Os parâmetros são escolhidos pela validação.
 
-Use os CSVs de uma destas pastas em todos os algoritmos:
+As contagens, definições das características e limitações estão no
+[README dos dados](dataset/processado/README.md). A reamostragem não cria novos
+empates; possíveis simetrias entre divisões e poucos empates na avaliação limitam
+a interpretação dos resultados.
 
-- [abordagem_1](dataset/processado/abordagem_1): `treino.csv`, `validacao.csv` e `teste.csv`,
-  com nove casas numéricas (`b=0`, `x=1`, `o=-1`).
-- [abordagem_2](dataset/processado/abordagem_2): os mesmos conjuntos, com 15 características calculadas.
+## Experimentos e comparação
 
-Na abordagem 2, posições ocupadas são nove indicadores binários, um por casa.
-“Linhas com 2 X/O” conta exatamente duas marcas nos oito alinhamentos (linhas, colunas e diagonais),
-mesmo quando a terceira casa pertence ao adversário. O jogador da vez é calculado pelas contagens:
-X=1 quando as contagens são iguais; O=-1 quando X tem uma marca a mais. Em tabuleiros finais,
-isso representa o próximo turno hipotético, sem consultar o rótulo.
+| Classificador | Notebook |
+| --- | --- |
+| k-NN | [knn.ipynb](dataset/processado/knn/knn.ipynb) |
+| Árvore de decisão | [arvore_decisao.ipynb](dataset/processado/arvoreDecisao/arvore_decisao.ipynb) |
+| Random Forest | [random_forest.ipynb](dataset/processado/randomForest/random_forest.ipynb) |
+| MLP | [mlp.ipynb](dataset/processado/mlp/mlp.ipynb) |
+| SVM | [svm.ipynb](dataset/processado/svm/svm.ipynb) |
 
-Exemplo de leitura das entradas e da resposta:
+Cada experimento documenta parâmetros, métricas, treino e validação nas duas
+abordagens. Sua pasta `resultados/` reúne tabelas, previsões, relatórios por classe,
+gráficos, conclusão e o modelo da abordagem selecionada.
 
-```python
-import pandas as pd
+A [comparação geral](dataset/processado/comparacao/README.md) reúne as dez
+configurações, acurácia, precisão, recall, F1 macro e tempos medidos sob o mesmo
+protocolo. Os CSVs e PNGs em `comparacao/resultados/` podem ser utilizados no relatório.
 
-treino = pd.read_csv("dataset/processado/abordagem_1/treino.csv")
-X_treino = treino.drop(columns=["id_tabuleiro", "estado"])
-y_treino = treino["estado"]
-```
-
-`id_tabuleiro` é apenas um identificador para auditoria. `estado` é a saída desejada.
-As duas abordagens mantêm os mesmos IDs, rótulos e ordem dentro de cada conjunto.
-Escolha parâmetros pela validação e avalie a configuração final no teste. Se precisar ajustar
-escalas, ajuste o transformador somente no treino. Preserve as divisões entre algoritmos.
-
-A base selecionada e as divisões anteriores à reamostragem estão em `dataset/processado/`.
-Mais detalhes estão no [README dos dados](dataset/processado/README.md) e no notebook.
-
-## Experimentos de classificação
-
-Os notebooks usam os mesmos CSVs de treino, validação e teste:
-
-- [k-NN](dataset/processado/knn/knn.ipynb).
-- [Árvore de decisão](dataset/processado/arvoreDecisao/arvore_decisao.ipynb).
-- [MLP](dataset/processado/mlp/mlp.ipynb): rede neural com padronização ajustada no treino,
-  seleção dos parâmetros pela validação, métricas por classe, gráficos e medição de custo.
-- [SVM](dataset/processado/svm/svm.ipynb): comparação dos kernels linear e RBF, com
-  padronização ajustada no treino e seleção de C e gamma pela validação.
-- [Random Forest](dataset/processado/randomForest/random_forest.ipynb): comparação do
-  número de árvores, profundidade máxima e tamanho mínimo das folhas pela validação.
-
-Execute as células de cada notebook na ordem. Na MLP e no SVM, a última etapa salva tabelas,
-gráficos, documentação e o modelo com seu padronizador nas respectivas pastas `resultados/`.
-Os notebooks de k-NN, árvore de decisão e Random Forest também exportam seus modelos
-selecionados pela validação, metadados e previsões de teste na etapa final.
-Os parâmetros são escolhidos antes da avaliação no teste. A comparação final dos cinco
-classificadores ainda faz parte das etapas seguintes do trabalho.
-
-Os tempos registrados medem o ajuste e a previsão do modelo sobre as representações já
-preparadas. Eles não incluem leitura dos CSVs, extração das características do tabuleiro
-ou comunicação da interface. A comparação deve considerar as condições de execução,
-além das métricas de classificação e das diferenças entre treino e validação.
+Recomendamos **SVM com A2, kernel linear e C=1**: combina validação próxima à da
+MLP, menor diferença entre treino e validação e baixo custo de ajuste. No teste,
+obteve **94,62% de acurácia e 0,9575 de F1 macro**. A justificativa e os limites
+da comparação estão na [conclusão](dataset/processado/comparacao/resultados/conclusao.md).
 
 ## Front end
 
-Na raiz do projeto, execute `python front_end/servidor.py` no ambiente das dependências
-e abra **http://127.0.0.1:8765**. O ambiente precisa corresponder ao utilizado para exportar
-os modelos, conforme registrado nos resumos dos experimentos.
+Na raiz do projeto, execute:
 
-Você joga X e a máquina joga O aleatoriamente. A interface permite escolher MLP, SVM,
-k-NN, árvore de decisão ou Random Forest, e mostra a previsão do modelo escolhido
-a cada jogada e contabiliza acertos, erros e acurácia. Uma conferência pelas regras permite
-continuar diante de um fim anunciado incorretamente e encerrar diante de um fim não detectado,
-como pede o enunciado. Os registros podem ser exportados para o relatório.
+```sh
+python front_end/servidor.py
+```
 
-Consulte o [README do front end](front_end/README.md) para entender o código, os registros
-e como avaliar a solução durante partidas reais. O modelo definitivo poderá ser escolhido
-depois da comparação dos cinco classificadores. O seletor auxilia a avaliação das cinco
-opções; a possibilidade de escolher modelos na interface é um recurso adicional.
+Abra **http://127.0.0.1:8765**. A interface inicia com MLP; selecione **SVM antes
+da primeira jogada** para avaliar o modelo recomendado. As cinco opções continuam
+disponíveis. O placar registra acertos, erros e acurácia por jogada e por modelo.
+Os botões de exportação salvam os registros para análise no relatório.
 
-## Atendimento ao enunciado e etapas de entrega
+O [README do front](front_end/README.md) explica a conferência das previsões,
+os registros e os comandos de verificação. Os registros locais de partidas são
+ignorados pelo Git; inclua explicitamente os arquivos escolhidos para a entrega.
 
-| Requisito | Situação documentada neste repositório |
-| --- | --- |
-| Análise e adequação do dataset UCI | Concluídas no notebook de preparação, com justificativas e contagens por classe. |
-| Amostragem e balanceamento | 616 tabuleiros distintos; reamostragem somente no treino. A escassez de empates está documentada. |
-| Duas abordagens de pré-processamento | Implementadas e avaliadas nos cinco classificadores disponíveis. |
-| Mesmas divisões físicas de treino, validação e teste | CSVs compartilhados pelos experimentos; seleção de parâmetros pela validação. |
-| Pelo menos cinco classificadores | k-NN, árvore de decisão, MLP, SVM e Random Forest disponíveis. |
-| Parâmetros, métricas e análise dos algoritmos | Registrados nos notebooks, incluindo topologias da MLP. As explicações e justificativas devem compor o relatório. |
-| Comparação geral e escolha do classificador | Falta consolidar tabelas e gráficos dos cinco algoritmos, comparar desempenho e custo e justificar a escolha. |
-| Interface, mensagens e contagem de acertos/erros | Implementadas; a configuração definitiva depende da comparação dos algoritmos. |
-| Resultados da interação com usuários | A interface exporta registros reais; os resultados devem integrar o relatório e corresponder ao modelo definitivo. |
-| Relatório em PPT | Deve reunir introdução, dados, pré-processamento, algoritmos, justificativas, resultados, comparação e conclusão. |
-| Vídeo de até 10 minutos | Deve apresentar o processo e o relatório, com todas as integrantes aparecendo e explicando suas partes. |
-| Declaração de uso de ferramentas de IA | Registrada abaixo e nos materiais revisados; deve acompanhar a apresentação da entrega. |
-
-O relatório deve explicar o funcionamento dos dois algoritmos de livre escolha e registrar
-as dificuldades e os aprendizados. Cada integrante deve desenvolver pelo menos um
-classificador e compreender seu código, parâmetros e resultados. A inscrição do grupo,
-o prazo e a apresentação devem seguir as orientações do Moodle. O vídeo deve ser gravado
-pelas integrantes, sem substituição de suas falas ou imagens por IA; sua entrega é obrigatória.
-
-## Uso de ferramentas de IA
-
-O Codex, da OpenAI, foi utilizado para explicar conceitos, auxiliar na análise e transformação
-dos dados, gerar e organizar código e documentação dos notebooks de preparação, MLP e SVM,
-executar os experimentos de MLP e SVM, criar e documentar o front end, revisar os textos e
-comentários dos notebooks de k-NN e árvore de decisão, ajustar seus caminhos de leitura
-e verificar os resultados. Também auxiliou na exportação dos modelos de k-NN, árvore
-de decisão e Random Forest, na atualização da execução do notebook de k-NN para
-corresponder ao modelo exportado e na inclusão dos cinco classificadores no seletor da interface.
-Esse registro identifica as atividades em que houve assistência de IA, conforme solicitado
-no enunciado.
+Ferramentas de apoio: Claude, Gemini e Codex.

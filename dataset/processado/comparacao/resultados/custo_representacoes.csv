@@ -1,0 +1,3 @@
+codigo_abordagem,abordagem,n_features,tempo_extracao_ms,tempo_extracao_desvio_ms
+abordagem_1,A1 (tabuleiro),9,0.21137719922990073,0.009206943880295665
+abordagem_2,A2 (características),15,0.8024397993722232,0.004677072170714313

@@ -1,0 +1,11 @@
+algoritmo,codigo_abordagem,parametros,topologia_mlp
+k-NN,abordagem_1,"{""k"": 7, ""metrica"": ""manhattan"", ""pesos"": ""uniform""}",Não se aplica
+k-NN,abordagem_2,"{""k"": 3, ""metrica"": ""manhattan"", ""pesos"": ""uniform""}",Não se aplica
+Árvore de decisão,abordagem_1,"{""criterio"": ""gini"", ""max_depth"": 8, ""min_leaf"": 1}",Não se aplica
+Árvore de decisão,abordagem_2,"{""criterio"": ""gini"", ""max_depth"": 8, ""min_leaf"": 1}",Não se aplica
+Random Forest,abordagem_1,"{""n_arvores"": 200, ""max_depth"": null, ""min_leaf"": 2}",Não se aplica
+Random Forest,abordagem_2,"{""n_arvores"": 10, ""max_depth"": null, ""min_leaf"": 1}",Não se aplica
+MLP,abordagem_1,"{""camadas"": [64, 32], ""ativacao"": ""relu"", ""alpha"": 1.0}",9 → 64 → 32 → 4
+MLP,abordagem_2,"{""camadas"": [64, 32], ""ativacao"": ""relu"", ""alpha"": 1.0}",15 → 64 → 32 → 4
+SVM,abordagem_1,"{""kernel"": ""rbf"", ""C"": 100.0, ""gamma"": 0.01}",Não se aplica
+SVM,abordagem_2,"{""kernel"": ""linear"", ""C"": 1.0, ""gamma"": null}",Não se aplica

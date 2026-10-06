@@ -13,6 +13,8 @@
     "Jogador O venceu",
     "Empate"
   ],
+  "threads_blas": 1,
+  "repeticoes_tempo": 20,
   "criterio_selecao_configuracao": "F1 macro de validação; acurácia; primeira configuração da grade",
   "criterio_selecao_abordagem": "F1 macro de validação; acurácia; primeira abordagem",
   "configuracoes_testadas": 56,

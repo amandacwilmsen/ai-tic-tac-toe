@@ -1,0 +1,3 @@
+codigo_abordagem,abordagem,f1_treino,val_f1_macro,val_acc,gap_treino_val,n_features,k,metrica,pesos
+abordagem_1,A1 (tabuleiro),0.8286721893372948,0.6515716374269007,0.717391304347826,0.1771005519103941,9,7,manhattan,uniform
+abordagem_2,A2 (características),0.9475162601648276,0.8861302096596214,0.8586956521739131,0.06138605050520618,15,3,manhattan,uniform

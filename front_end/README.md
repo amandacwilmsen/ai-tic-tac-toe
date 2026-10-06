@@ -38,13 +38,13 @@ colunas de entrada, a versão do scikit-learn e as previsões de teste para audi
 As métricas da interação ficam separadas por modelo, inclusive ao voltar a um modelo
 que já foi utilizado na mesma sessão.
 
-O seletor é um recurso adicional de avaliação; o enunciado exige o uso do classificador
-escolhido, sem obrigar a seleção de modelos pelo usuário. A escolha definitiva deve ser
-documentada após a comparação dos cinco algoritmos e refletida na configuração da interface.
+Para avaliar o modelo recomendado na
+[comparação dos classificadores](../dataset/processado/comparacao/comparacao_classificadores.ipynb),
+selecione **SVM** antes da primeira jogada. Ele utiliza A2, kernel linear e C=1.
 Para acrescentar outro modelo, exporte seu modelo e metadados e registre-o em
 `modelos.py`, preservando as mesmas representações de entrada.
 
-## Como atendemos ao enunciado
+## Funcionamento e conferência das previsões
 
 Após **cada jogada válida de X ou O**, o modelo recebe apenas as características do
 tabuleiro. As funções de entrada repetem as convenções do notebook: nove casas
@@ -61,7 +61,7 @@ Em seguida, conferimos a previsão com um gabarito obtido pelas regras do jogo:
 | A partida terminou e a IA reconhece o resultado correto | Registrar o acerto e encerrar |
 | A partida terminou, mas a IA confunde o vencedor/empate | Registrar o erro de classe e encerrar |
 
-As regras são necessárias para medir erros e aplicar as exceções solicitadas. A tela
+As regras permitem medir erros e controlar a continuidade da partida. A tela
 mostra separadamente a **previsão do modelo** e o **estado real**, preservando as falhas
 da IA. O modelo não recebe o gabarito como entrada. Nunca são feitas jogadas após um
 fim real, evitando estados ilegais.
@@ -115,8 +115,8 @@ python -m unittest front_end.test_modelos -v
 python -m unittest front_end.test_http -v
 ```
 
-Os testes de `test_front_end.py` usam classificadores controlados para reproduzir os
-erros de classificação exigidos pelo enunciado. O teste de `test_http.py` utiliza os modelos
+Os testes de `test_front_end.py` usam classificadores controlados para reproduzir
+situações de erro e verificar o controle da partida. O teste de `test_http.py` utiliza os modelos
 reais exportados para verificar a integração entre página, servidor, sessões e registros.
 O teste de `test_modelos.py` verifica os 93 tabuleiros de teste para cada um dos cinco
 modelos, comparando as entradas com os CSVs preparados e as previsões com os registros
@@ -125,7 +125,3 @@ Os testes de partidas escrevem somente em pastas temporárias, preservando os re
 das interações reais. O teste de modelos apenas lê os arquivos dos experimentos.
 Essas verificações avaliam o funcionamento do sistema; suas contagens não devem ser
 apresentadas como desempenho obtido durante interações com usuários.
-
-A aparência foi inspirada na ideia do enunciado de associar o tabuleiro a uma mensagem
-de estado. O layout foi criado para uma partida interativa com histórico e avaliação.
-O Codex (OpenAI) auxiliou na criação do código, documentação e verificações desta etapa.
